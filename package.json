@@ -1,0 +1,18 @@
+{
+  "name": "movie-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "db:create": "createdb movie-app",
+    "db:init": "psql -f schema.sql movie-app && psql -f seed.sql movie-app",
+    "db:destroy": "dropdb movie-app",
+    "db:reset": "npm run db:destroy; npm run db:create && npm run db:init",
+    "test": "mocha",
+    "test:watch": "mocha -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
